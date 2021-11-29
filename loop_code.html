@@ -1,0 +1,32 @@
+<!-- Salvatore Vilardi-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BlastOff</title>
+    <script>
+
+    function StartTheCountdown()
+     //starting countdown
+    {var timeleft = 10;
+    //when timer gets below 0
+    var downloadTimer = setInterval(function(){
+        if(timeleft <= 0){
+
+            clearInterval(downloadTimer);
+            document.getElementById("CountdownDisplay").innerHTML = "BlastOff";}
+            else {
+                document.getElementById("CountdownDisplay").innerHTML = timeleft;}
+                //time between each countdown
+                timeleft -= 1;}, 1000);
+    }
+
+    </script>
+</head>
+<body style = background-color:darkgrey>
+  <h1 style = color:aquamarine>Blast Off Timer</h1>
+  <p>The button below will start the countdown</p>  
+  <!-- This is the button-->
+  <button type="button" onclick="StartTheCountdown()">Start Countdown</button>
+  <p style = color:blueviolet id="CountdownDisplay">10</p>
+</body>
+</html>
