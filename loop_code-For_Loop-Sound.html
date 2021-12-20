@@ -1,0 +1,43 @@
+<!-- Salvatore Vilardi-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BlastOff</title>
+    <script>
+
+    function playMusic(){
+        var music = new Audio('https://github.com/svilardi/github-account/blob/main/us-lab-background.mp3')
+        music.play();
+    }
+
+    function StartTheCountdown(){
+        //starting countdown
+        var countdown = 10;
+        //total time for countdown
+        var timeout = 10000
+        //for loop that determines starting value, ending value, and numeric interval
+        for (var i = 11; i >= 0; i--){
+            setTimeout(() => {
+                if (countdown >= 0){
+                    document.getElementById("CountdownDisplay").innerHTML = countdown;
+                    countdown = countdown - 1;;
+                    //Once countdown gets to zero than comment below displayed
+                } else{
+                    document.getElementById("CountdownDisplay").innerHTML = "Blast Off";
+                }
+            }, timeout)
+            //timeout interval
+            timeout = timeout - 1000;
+        }
+    }
+    
+    </script>
+</head>
+<body style = background-color:darkgrey>
+  <h1 style = color:aquamarine>Blast Off Timer</h1>
+  <p>The button below will start the countdown</p>  
+  <!-- This is the button-->
+  <button type="button" onclick="StartTheCountdown()">Start Countdown</button>
+  <p style = color:blueviolet id="CountdownDisplay">10</p>
+</body>
+</html>
