@@ -1,0 +1,65 @@
+<!-- Salvatore Vilardi-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Quarks Casino</title>
+    <script>
+
+    function play(){
+
+        //sets the min and max value for the dice
+        var min = 1
+        var max = 6
+
+        //creates a random value for each dice rolled
+        var die1 = Math.floor(Math.random() * (max - min + 1)) + min;
+        var die2 = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        //adds the sum of both die 1 and die 2
+        let sum = die1 + die2
+
+        document.getElementById("crapsDemo1").innerHTML = "Die 1 = " + die1;
+        document.getElementById("crapsDemo2").innerHTML = "<br/>";
+        document.getElementById("crapsDemo3").innerHTML = "Die 2 = " + die2;
+        document.getElementById("crapsDemo4").innerHTML = "<br/>";
+        document.getElementById("crapsDemo5").innerHTML = "Sum = " + sum;
+        document.getElementById("crapsDemo6").innerHTML = "<br/>";
+        //clears the Craps messege
+        document.getElementById("crapsDemo7").innerHTML = "";
+        //clears the Double messege
+        document.getElementById("crapsDemo9").innerHTML = "";
+
+        //if you roll a combined 7 or 11 you get the below messege
+        if (sum == 7 || sum == 11) {
+            document.getElementById("crapsDemo7").innerHTML = "Craps - you lose";
+            document.getElementById("crapsDemo8").innerHTML = "<br/>";
+        }
+
+        //if you roll doubles then you get the below messege
+        else if (die1 == die2 && die1 % 2 == 0){
+            document.getElementById("crapsDemo9").innerHTML = "Doubles - you win!";
+            docuemnt.getElementById("crapsDemo10").innerHTML = "<br/>";
+        }
+    }
+    
+    </script>
+</head>
+<body style = background-color:darkgrey>
+  <h1 style = color:aquamarine>Quarks Casino</h1> 
+    <p id="casinoInfo"> Welcome to my simple craps game </p>
+    <!-- button will perform play functions -->
+    <button onclick="play()">Roll the dice</button>  
+
+    <p id="crapsDemo1"> Simple Craps</p>
+    <p id="crapsDemo2"> </p>
+    <p id="crapsDemo3"> </p>
+    <p id="crapsDemo4"> </p>
+    <p id="crapsDemo5"> </p>
+    <p id="crapsDemo6"> </p>
+    <p id="crapsDemo7"> </p>
+    <p id="crapsDemo8"> </p>
+    <p id="crapsDemo9"> </p>
+    <p id="crapsDemo10"> </p>
+
+</body>
+</html>
